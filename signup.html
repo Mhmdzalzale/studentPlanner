@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Planner Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <p>Organize your academic life</p>
+
+        <form id="signupform">
+            <input id="userName" type="text" placeholder="Username" required>
+            <input id="userPass" type="password" placeholder="Enter Password" required>
+            <input id="confirmUserPass" type="password" placeholder="Confirm Password" required>
+            <p id="msg"></p>
+            <button type="button" id="signupBtn">Signup</button>
+        </form>
+            <button id="showPass" type="button" onclick="togglePassword()">Show password</button>
+
+    </div>
+<script src="signup.js"></script>
+</body>
+</html>
