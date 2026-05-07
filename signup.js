@@ -26,14 +26,15 @@ signupBtn.addEventListener("click", function(event){
         return;
     }
     else{
-        message.textContent="Passwords match"
-        message.style.color="green"
         let users=JSON.parse(localStorage.getItem("users"))||[];
         let exists=users.some(function(user){
             return user.username===userInput.value;
         })
-        if(exists){
-            message.textContent="User already exists."
+        if(userInput.value.trim()==="" || userPass.value.trim()===""){
+            message.textContent="Please enter credentials "
+        message.style.color="red"}
+        else if(exists){
+            message.innerHTML='User already exists. <a href="login.html">Login instead</a>';
             message.style.color="red";
         }
         else{
