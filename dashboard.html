@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Planner Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h1 id="welcomeText">Welcome, Student</h1>
+                <p class="subtitle">Stay organized. Stay ahead.</p>
+            </div>
+            <div class="sidebar-middle">
+                <button type="button" id="dashboardBtn">Dashboard</button>
+                <button type="button" id="assignmentsBtn">Assignments</button>
+                <button type="button" id="tasksBtn">Tasks</button>
+                <button type="button" id="scheduleBtn">Schedule</button>
+
+            </div>
+
+            <div class="sidebar-bottom">
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Your Planner</h2>
+                <p>Track tasks, deadlines, and assignments.</p>
+            </header>
+
+            <section class="task-section">
+                <div class="task-row">
+                    <input id="taskInput" type="text" placeholder="Add a new task...">
+                    <button id="addTaskBtn">Add Task</button>
+                </div>
+
+                <ul id="taskList"></ul>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
