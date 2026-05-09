@@ -12,7 +12,7 @@
 
         <aside class="sidebar">
             <div class="sidebar-top">
-                <h1 id="welcomeText">Welcome, Student</h1>
+                <h1 id="welcomeTxt">Welcome, Student</h1>
                 <p class="subtitle">Stay organized. Stay ahead.</p>
             </div>
             <div class="sidebar-middle">
@@ -29,20 +29,44 @@
         </aside>
 
         <main class="main-content">
+            
             <header class="main-header">
-                <h2>Your Planner</h2>
-                <p>Track tasks, deadlines, and assignments.</p>
+                <h2>Your Dashboard</h2>
+            
             </header>
 
-            <section class="task-section">
-                <div class="task-row">
-                    <input id="taskInput" type="text" placeholder="Add a new task...">
-                    <button id="addTaskBtn">Add Task</button>
-                </div>
-
-                <ul id="taskList"></ul>
+            <section id="tasksSection" class="app-section hidden">
+                <h2>Tasks</h2>
             </section>
-        </main>
+
+            <section id="assignmentsSection" class="app-section hidden">
+                <h2>Assignments</h2>
+            </section>
+
+            <section id="scheduleSection" class="app-section hidden">
+                <h2>Schedule</h2>
+            </section>
+            <section id="homeSection" class="app-section">
+                <h2>Dashboard Overview</h2>
+
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3>Tasks</h3>
+                     <p id="taskCount">0</p>
+                 </div>
+
+                 <div class="summary-card">
+                        <h3>Assignments</h3>
+                       <p id="assignmentCount">0</p>
+                 </div>
+
+                    <div class="summary-card">
+                     <h3>Schedule</h3>
+                     <p id="scheduleSummary">No schedule yet</p>
+                    </div>
+                </div>
+            </section>
+            </main>
 
     </div>
 
