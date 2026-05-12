@@ -44,6 +44,7 @@ signupBtn.addEventListener("click", function(event){
         };
         users.push(newUser);
     localStorage.setItem("users",JSON.stringify(users));
+    window.location.href="dashboard.html"
     }}
 })
 
