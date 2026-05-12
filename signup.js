@@ -34,7 +34,7 @@ signupBtn.addEventListener("click", function(event){
             message.textContent="Please enter credentials "
         message.style.color="red"}
         else if(exists){
-            message.innerHTML='User already exists. <a href="login.html">Login instead</a>';
+            message.innerHTML='User already exists. <a href="index.html">Login instead</a>';
             message.style.color="red";
         }
         else{

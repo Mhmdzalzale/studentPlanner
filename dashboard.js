@@ -2,7 +2,7 @@ const welcomeTxt = document.getElementById("welcomeTxt");
 const currentUser = localStorage.getItem("currentUser");
 console.log("current user ", currentUser);
 if(!currentUser) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 } else {
     welcomeTxt.textContent = `Welcome, ${currentUser}!`;
 }
