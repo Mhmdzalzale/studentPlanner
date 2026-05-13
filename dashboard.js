@@ -6,8 +6,34 @@ if(!currentUser) {
 } else {
     welcomeTxt.textContent = `Welcome, ${currentUser}!`;
 }
-const dashboardBtn = document.getElementById("dashboardBtn");
-const assignmentsBtn = document.getElementById("assignmentsBtn");
-const tasksBtn = document.getElementById("tasksBtn");
-const scheduleBtn = document.getElementById("scheduleBtn");
-const logoutBtn = document.getElementById("logoutBtn");
+const tasksBtn = document.querySelector("#tasksBtn");
+const assignmentsBtn = document.querySelector("#assignmentsBtn");
+const scheduleBtn = document.querySelector("#scheduleBtn");
+const dashboardBtn = document.querySelector("#dashboardBtn");
+
+const homeSection = document.querySelector("#homeSection");
+const tasksSection = document.querySelector("#tasksSection");
+const assignmentsSection = document.querySelector("#assignmentsSection");
+const scheduleSection = document.querySelector("#scheduleSection");
+function showSection(sectionToShow) {
+    homeSection.classList.add("hidden");
+    tasksSection.classList.add("hidden");
+    assignmentsSection.classList.add("hidden");
+    scheduleSection.classList.add("hidden");
+
+    sectionToShow.classList.remove("hidden");
+}
+tasksBtn.addEventListener("click", function () {
+    showSection(tasksSection);
+});
+
+assignmentsBtn.addEventListener("click", function () {
+    showSection(assignmentsSection);
+});
+
+scheduleBtn.addEventListener("click", function () {
+    showSection(scheduleSection);
+});
+dashboardBtn .addEventListener("click", function () {
+    showSection(homeSection);
+});
