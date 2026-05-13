@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  check-site:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: test -f index.html
+      - run: echo "Static site check passed"
+
+workflows:
+  check-site-workflow:
+    jobs:
+      - check-site
