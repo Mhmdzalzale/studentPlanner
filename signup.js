@@ -40,7 +40,10 @@ signupBtn.addEventListener("click", function(event){
         else{
         const newUser={
             username: userInput.value,
-            password: userPass.value
+            password: userPass.value ,
+            tasks : [],
+            assignments: [],
+            schedule: []
         };
         users.push(newUser);
     localStorage.setItem("users",JSON.stringify(users));
