@@ -1,5 +1,13 @@
-const welcomeTxt = document.getElementById("welcomeTxt");
 const currentUser = localStorage.getItem("currentUser");
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let loggedInUser = users.find(function(user) {
+    return user.username === currentUser;
+});
+
+
+const welcomeTxt = document.getElementById("welcomeTxt");
 console.log("current user ", currentUser);
 if(!currentUser) {
     window.location.href = "index.html";
@@ -45,8 +53,25 @@ addTaskBtn.addEventListener("click", function() {
     if (taskText === "") {
         return;
     }
+    if (!loggedInUser.tasks) {
+    loggedInUser.tasks = [];
+}
+    loggedInUser.tasks.push(taskText);
+    localStorage.setItem("users", JSON.stringify(users));
+
     const li = document.createElement("li");
     li.textContent = taskText;
     taskList.appendChild(li);
     taskInput.value = "";
+});
+const logoutBtn = document.querySelector("#logoutBtn");
+logoutBtn.addEventListener("click", function() {
+
+    const confirmed = confirm("Are you sure you want to log out?");
+
+    if (confirmed) {
+        localStorage.removeItem("currentUser");
+        window.location.href = "index.html";
+    }
+
 });
