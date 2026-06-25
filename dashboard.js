@@ -48,7 +48,30 @@ dashboardBtn .addEventListener("click", function () {
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
-addTaskBtn.addEventListener("click", function() {
+function renderTasks() {
+    taskList.innerHTML = "";
+
+    if (!loggedInUser.tasks) {
+        loggedInUser.tasks = [];
+    }
+
+    loggedInUser.tasks.forEach(function(task,index) {
+        const li = document.createElement("li");
+        li.textContent = task;
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click", function() {
+            loggedInUser.tasks.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(users));
+            renderTasks();
+        });
+        li.appendChild(deleteBtn);
+        taskList.appendChild(li);
+    });
+}
+
+        renderTasks();
+    addTaskBtn.addEventListener("click", function() {
     const taskText = taskInput.value.trim();
     if (taskText === "") {
         return;
@@ -59,9 +82,7 @@ addTaskBtn.addEventListener("click", function() {
     loggedInUser.tasks.push(taskText);
     localStorage.setItem("users", JSON.stringify(users));
 
-    const li = document.createElement("li");
-    li.textContent = taskText;
-    taskList.appendChild(li);
+     renderTasks();
     taskInput.value = "";
 });
 const logoutBtn = document.querySelector("#logoutBtn");
