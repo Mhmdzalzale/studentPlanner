@@ -48,12 +48,14 @@ dashboardBtn .addEventListener("click", function () {
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+const taskCount = document.getElementById("taskCount");
 function renderTasks() {
     taskList.innerHTML = "";
 
     if (!loggedInUser.tasks) {
         loggedInUser.tasks = [];
     }
+    taskCount.textContent = loggedInUser.tasks.length;
 
     loggedInUser.tasks.forEach(function(task,index) {
         const li = document.createElement("li");
